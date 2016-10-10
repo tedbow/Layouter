@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+set classes = [
+'layouter--twocol',
+]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="layouter-region layouter-region--left">
+      {{ content.left }}
+    </div>
+
+    <div class="layouter-region layouter-region--right">
+      {{ content.right }}
+    </div>
+  </div>
+{% endif %}
